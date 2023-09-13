@@ -1,0 +1,4 @@
+.aula
+__pycache__
+dbsqlite3
+.env
