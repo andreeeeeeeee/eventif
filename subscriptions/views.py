@@ -9,13 +9,13 @@ from django.core import mail
 
 def subscribe(request):
     if request.method == 'POST':
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
+        formulario = SubscriptionForm(request.POST)
+        if formulario.is_valid():
             subject = 'Confirmação de inscrição'
             from_email = settings.DEFAULT_FROM_EMAIL
-            email = form.cleaned_data['email']
+            email = formulario.cleaned_data['email']
             template_name = 'subscriptions/subscription_email.txt'
-            context = form.cleaned_data
+            context = formulario.cleaned_data
 
             body = render_to_string(template_name, context)
             mail.send_mail(subject, body, from_email, [from_email, email])
@@ -23,6 +23,6 @@ def subscribe(request):
             messages.success(request, 'Inscrição realizada com sucesso!')
             return HttpResponseRedirect('/inscricao/')
     else:
-        form = SubscriptionForm()
+        formulario = SubscriptionForm()
 
-    return render(request, 'subscriptions/subscription_form.html', {'form': form})
+    return render(request, 'subscriptions/subscription_form.html', {'form': formulario})
