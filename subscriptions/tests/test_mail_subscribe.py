@@ -20,7 +20,8 @@ class MailTest(TestCase):
 
     def test_subscription_email_to(self):
         # Atualize os endereços de e-mail aqui
-        expect = ['contato@eventif.com.br', '']
+        expect = ['contato@eventif.com.br',
+                  'andre.souza@aluno.riogrande.ifrs.edu.br']
         self.assertEqual(expect, self.email.to)
 
     def test_subscription_email_body(self):
