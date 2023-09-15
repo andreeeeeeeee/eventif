@@ -7,6 +7,6 @@ from subscriptions.views import subscribe
 urlpatterns = [
     path('', home),
     path('inscricao/', subscribe),
-    path("inscricao/", contact),
+    path("contato/", contact, name = 'contact'),
     path("admin/", admin.site.urls),
 ]
