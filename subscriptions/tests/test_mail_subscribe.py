@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core import mail
-from subscriptions.forms import SubscriptionForm
+from subscriptions.form import SubscriptionForm
 
 
 class MailTest(TestCase):

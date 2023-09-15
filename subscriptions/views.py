@@ -14,7 +14,7 @@ def subscribe(request):
             subject = 'Confirmação de inscrição'
             from_email = settings.DEFAULT_FROM_EMAIL
             email = formulario.cleaned_data['email']
-            template_name = 'subscriptions/subscription_email.txt'
+            template_name = 'subscription_email.txt'
             context = formulario.cleaned_data
 
             body = render_to_string(template_name, context)
@@ -25,4 +25,4 @@ def subscribe(request):
     else:
         formulario = SubscriptionForm()
 
-    return render(request, 'subscriptions/subscription_form.html', {'form': formulario})
+    return render(request, 'subscription_form.html', {'form': formulario})
