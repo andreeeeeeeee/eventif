@@ -11,7 +11,7 @@ def subscribe(request):
     if request.method == 'POST':
         formulario = SubscriptionForm(request.POST)
         if formulario.is_valid():
-            subject = 'Confirmação de inscrição'
+            subject = 'Inscrição realizada com sucesso!'
             from_email = settings.DEFAULT_FROM_EMAIL
             email = formulario.cleaned_data['email']
             template_name = 'subscription_email.txt'
