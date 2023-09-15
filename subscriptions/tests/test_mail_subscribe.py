@@ -11,7 +11,7 @@ class MailTest(TestCase):
         self.email = mail.outbox[0]
 
     def test_subscription_email_subject(self):
-        expect = "Confirmação de inscrição"
+        expect = "Inscrição realizada com sucesso!"
         self.assertEqual(expect, self.email.subject)
 
     def test_subscription_email_sender(self):
